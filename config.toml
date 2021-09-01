@@ -10,6 +10,8 @@ build_search_index = true
 # Set Theme
 theme="even"
 
+# Theme related variables
+title="Akhil's Blog"
 # Taxonomies
 taxonomies = [
     # You can enable/disable RSS
