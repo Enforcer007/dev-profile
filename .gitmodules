@@ -1,3 +1,6 @@
 [submodule "themes/even"]
 	path = themes/even
 	url = https://github.com/Enforcer007/zola-even
+[submodule "themes/xypnox"]
+	path = themes/xypnox
+	url = https://github.com/Enforcer007/zola-xypnox.git
