@@ -1,17 +1,20 @@
 +++
-title = "First Text"
-weight = 1
-order = 1
-date = 2018-07-18
-insert_anchor_links = "right"
+title = "Glorious Endgame"
+description = "A showcase of my endgame setup and some discussion on the things I discovered during the process."
+date = 2021-03-02
 [taxonomies]
-categories = ["Real Content"]
+categories = ["tech"]
+tags = ["linux", "theme", "tech", "design"]
+[extra]
+metadata_image = "/images/ubuntu.png"
 +++
 
-Testing every `elements` you can find in [CommonMark](http://commonmark.org).
-<!-- more -->
-
 Quisque viverra a eros id auctor. Proin id nibh ut nisl dignissim pellentesque et ac mi. Nullam mattis urna quis consequat bibendum. Donec pretium dui elit, a semper purus tristique et. Mauris euismod nisl eu vehicula facilisis. Maecenas facilisis non massa non scelerisque. Integer malesuada cursus erat eu viverra. Duis ligula mi, eleifend vel justo id, laoreet porttitor ex. Etiam ultricies lacus lorem, sed aliquam nulla blandit in. Maecenas vel facilisis neque, vitae fringilla eros. In justo nibh, pellentesque sed faucibus nec, varius sit amet risus.
+
+```python
+def hello():
+    return 123
+```
 
 > This is a quote
 
