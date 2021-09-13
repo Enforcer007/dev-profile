@@ -11,8 +11,8 @@ build_search_index = false
 theme="xyblag"
 
 # Theme related variables
-title="Akhil's Blog"
-description="My Blog of stuff"
+title="Machine Learning Bytes"
+description=" My views and Notes on 🤖 "
 
 # generate feed
 generate_feed=true
