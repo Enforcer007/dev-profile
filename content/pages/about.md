@@ -4,18 +4,13 @@ path = "about"
 template = "about.html"
 +++
 
-This site provides a demo for the Even theme for the 
-[Gutenberg](https://www.getgutenberg.io/) static site generator.  Even was
-designed by [Vincent Prouillet](https://vincent.is/) and was based on the
-Even Hugo theme by olOwOlo.  This demo site was built by
-[Daniel Sockwell](https://www.codesections.com).  Both the theme and this
-site are licensed under the
-[MIT license](https://opensource.org/licenses/MIT), so you may freely use and
-redistribute either for commercial or non-commercial work.
+#### I'm a Data Scientist and have been in this field for a good 5️⃣ ➕ years. I think now it's time for me to wear the blogger's 🤠 and jot down my learnings and experiences. <ins>Please execuse for lots of emojis</ins> 😀 😜 😎. I love to use them anytime anywhere. My partner always complains me on using 👍 I donno why she hates it 🤷‍♂️.
 
-You can find the source code for this site [in its GitHub
-repository](https://github.com/codesections/gutenberg-theme-demo/tree/even)
-and can find the source code for the theme in the
-[Even](https://www.github.com/Keats/even) repository.  For a
-description of this theme and links to other Gutenberg themes, please
-go to <https://www.getgutenberg.io/themes/>.
+### I promise this blog will not be about 
+- [Housing price prediction  🏘️](https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard)
+- [Titanic survival prediction ⚓](https://www.kaggle.com/ldfreeman3/a-data-science-framework-to-achieve-99-accuracy)
+- [Cats Dogs classification 🐱 🐶](https://www.kaggle.com/uysimty/keras-cnn-dog-or-cat-classification) (It doesn't mean I hate dogs and cats 😅).
+
+### Checkout my 🐙 [Github Profile](https://github.com/Enforcer007) for some crazy Projects that I've done for my peers and some freelancing work.
+
+#### I'm always active on Twitter 🐦. Please reach me out [@143akhil](https://twitter.com/143akhi). Open to discuss anything related to  🤖 and 🇪 🇲 🇴 🇯 🇮 🇸
