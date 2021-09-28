@@ -10,7 +10,7 @@ tags = ["stock","trading","algo trading"]
 metadata_image = "thumbnail.jpg"
 +++
 {% cover(src="cover.png") %}
-Install fonts quickly on linux
+Gap Up and Gap Down
 {% end %}
 
 We will try to analyse what should be our directional view for intra-day trades when market gaps up/down.
