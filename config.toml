@@ -12,7 +12,7 @@ theme="xyblag"
 
 # Theme related variables
 title="Machine Learning Bytes"
-description=" My views and Notes on 🤖 "
+description=" My Portfolio and Notes on 🤖 "
 
 # generate feed
 generate_feed=true
@@ -22,6 +22,7 @@ taxonomies = [
     # You can enable/disable RSS
     {name = "categories", feed = true},
     {name = "tags", feed = true},
+    {name = "blog", feed = true},
 ]
 
 [markdown]
@@ -38,6 +39,7 @@ render_emoji = true
 author = "Akhil"
 # Menu shown in the navbar
 blog_menu = [
+    {url = "$BASE_URL/blog", name = "Blog"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
     {url = "$BASE_URL/about", name = "About"},
