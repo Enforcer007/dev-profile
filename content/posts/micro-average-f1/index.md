@@ -4,7 +4,7 @@ description="How can we calculate f1 score of a model for multiple classes?"
 date=2021-09-28
 
 [taxonomies]
-categories = ["Machine Learning"]
+categories = ["Machine Learning", "Deep Learning"]
 tags = ["f1-score","scoring"]
 [extra]
 metadata_image = "thumbnail.png"

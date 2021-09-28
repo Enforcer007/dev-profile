@@ -4,8 +4,8 @@ description = "Intra-Day Trading during gap up/down days"
 date = 2021-09-03
 
 [taxonomies]
-categories = ["tech"]
-tags = ["stock","trading"]
+categories = ["Trading"]
+tags = ["stock","trading","algo trading"]
 [extra]
 metadata_image = "thumbnail.jpg"
 +++
