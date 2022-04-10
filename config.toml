@@ -8,21 +8,21 @@ compile_sass = true
 build_search_index = false
 
 # Set Theme
-theme="xyblag"
+theme = "xyblag-theme"
 
 # Theme related variables
 title = "Machine Learning Bytes"
 description = " My Portfolio and Blog on 🤖 "
 
 # generate feed
-generate_feed=true
+generate_feed = true
 
 # Taxonomies
 taxonomies = [
     # You can enable/disable RSS
-    {name = "categories", feed = true},
-    {name = "tags", feed = true},
-    {name = "blog", feed = true},
+    { name = "categories", feed = true },
+    { name = "tags", feed = true },
+    { name = "blog", feed = true },
 ]
 
 
@@ -40,10 +40,10 @@ render_emoji = true
 author = "Akhil"
 # Menu shown in the navbar
 blog_menu = [
-    {url = "$BASE_URL/blog", name = "Blog"},
-    {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
-    {url = "$BASE_URL/about", name = "MyProfile"},
+    { url = "$BASE_URL/blog", name = "Blog" },
+    { url = "$BASE_URL/categories", name = "Categories" },
+    { url = "$BASE_URL/tags", name = "Tags" },
+    { url = "$BASE_URL/about", name = "MyProfile" },
 ]
 
 

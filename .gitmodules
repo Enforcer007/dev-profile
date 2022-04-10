@@ -1,6 +1,3 @@
-[submodule "themes/even"]
-	path = themes/even
-	url = https://github.com/Enforcer007/zola-even
-[submodule "themes/xyblag"]
-	path = themes/xyblag
-	url = https://github.com/Enforcer007/zola-xyblag.git
+[submodule "themes/xyblag-theme"]
+	path = themes/xyblag-theme
+	url = git@github.com:Enforcer007/xyblag-theme.git
