@@ -2,6 +2,10 @@ on:
   push:
     branches:
       - "development"
+      - "master"
+  pull_request:
+    branches:
+      - "master"
 
 jobs:
   build:
@@ -14,3 +18,4 @@ jobs:
         uses: shalzz/zola-deploy-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
