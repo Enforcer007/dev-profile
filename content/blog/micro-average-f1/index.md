@@ -7,7 +7,7 @@ date=2021-09-28
 categories = ["Machine Learning", "Deep Learning"]
 tags = ["f1-score","scoring"]
 [extra]
-# metadata_image = "thumbnail.png"
+metadata_image = "thumbnail.png"
 +++
 
 {% cover(src="thumbnail.png", source_link="https://towardsdatascience.com/multi-class-metrics-made-simple-part-ii-the-f1-score-ebe8b2c2ca1") %}
