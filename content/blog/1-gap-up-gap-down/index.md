@@ -1,7 +1,7 @@
 +++
 title = "Gap Up Gap Down Trading"
 description = "Intra-Day Trading during gap up/down days"
-date = 2021-09-03
+date = 2021-09-04
 
 [taxonomies]
 categories = ["Trading"]
@@ -9,6 +9,7 @@ tags = ["stock","trading","algo trading"]
 [extra]
 metadata_image = "thumbnail.jpg"
 +++
+
 {% cover(src="cover.png") %}
 Gap Up and Gap Down
 {% end %}
@@ -38,4 +39,5 @@ We can also see out of all the gap opening days, how many short/long opportuniti
 For doubts, questions or want to know Elon Musk's next tweet on bitcoin, reachme out on twitter: @143akhi
 
 Click below on streamlit for an interactive tour of the above strategy.
+
 <p style='align: left;'><a href="https://share.streamlit.io/enforcer007/streamlit/main/app.py"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit App"></img></a></p>
