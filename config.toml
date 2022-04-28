@@ -45,7 +45,7 @@ blog_menu = [
     { url = "$BASE_URL/tags", name = "Tags" },
     { url = "$BASE_URL/about", name = "MyProfile" },
 ]
-
+post__thumbnail = { height = "200px" }
 
 # email
 email = "akhilsplendid@gmail.com"
