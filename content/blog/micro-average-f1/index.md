@@ -7,11 +7,13 @@ date=2021-09-28
 categories = ["Machine Learning", "Deep Learning"]
 tags = ["f1-score","scoring"]
 [extra]
-metadata_image = "thumbnail.png"
+# metadata_image = "thumbnail.png"
 +++
+
 {% cover(src="thumbnail.png", source_link="https://towardsdatascience.com/multi-class-metrics-made-simple-part-ii-the-f1-score-ebe8b2c2ca1") %}
 Confusion Matrix
 {% end %}
+
 #### F1 Score
 
 F1 Score is harmonic mean of Precision and Recall.
@@ -19,15 +21,17 @@ F1 Score is harmonic mean of Precision and Recall.
 ![F1 Score](https://svgshare.com/i/M7d.svg)
 
 #### Precision
+
 It tells you how weak is your model in predicting positive Classes. If number of False Positives are more than True Positives then your model has less precision.
 
 #### Recall
+
 It tells you how weak is your model in covering True Classes. If number of False Negatives are more than True Positives then your model has less recall.
 
 For more info on Precision and Recall, [Click Here](https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2)
 
-* F1-Score can be easily calculated for a binary classification Problem.
-* What if we have multi-class classification ? How can we calculate F1-Score and if calculated for each label how can we merge / consolidate them ?
+- F1-Score can be easily calculated for a binary classification Problem.
+- What if we have multi-class classification ? How can we calculate F1-Score and if calculated for each label how can we merge / consolidate them ?
 
 Let's try to address these questions by considering an Example:
 
@@ -39,11 +43,11 @@ The above values can be represented as below confusion Matrix:
 
 From the above table we can deduce the following for each Label:
 
-|Animals|TP|FP|FN|
-|---|---|---|---|
-|Cat|10|15|13|
-|Dog|20|11|12|
-|Fish|13|12|13|
+| Animals | TP  | FP  | FN  |
+| ------- | --- | --- | --- |
+| Cat     | 10  | 15  | 13  |
+| Dog     | 20  | 11  | 12  |
+| Fish    | 13  | 12  | 13  |
 
 Now F-1 Score for each label can be calculated by calculating individual Precisions and Recalls by
 
@@ -64,6 +68,7 @@ We have two type of Aggregations:
 **Macro Averaged F1-Score and Micro-Averaged F1-Score**
 
 #### Macro Averaged F1-Score
+
 Here we simple average all the F1-Scores and calculate a mean F1-Score.
 
 Average of all the F1-Scores result in **0.52**
@@ -71,6 +76,7 @@ Average of all the F1-Scores result in **0.52**
 But simply averaging all the F1-Scores isn't a fair way to estimate a model perfomance. Because this metric doesn't perform good on imbalanced dataset. A good explaination on the same can be [found here](https://datascience.stackexchange.com/questions/15989/micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin)
 
 #### Micro Averaged F1-Score
+
 Here instead of calculating each label's F1-Score, we derive the F1-Score by calculating Precision and Recall by summing all the TPs and Type Errors instead of calculating for each Label:
 
 ```python
@@ -86,4 +92,4 @@ F1-Score = 0.526
 
 Micro Averaged f1 score is one of the metric to be used for validation of multi-class classifier.
 
-Scikitlearn offers computation of micro average f1 score on the fly through the function [```sklearn.metrics.f1_score```](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
+Scikitlearn offers computation of micro average f1 score on the fly through the function [`sklearn.metrics.f1_score`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
