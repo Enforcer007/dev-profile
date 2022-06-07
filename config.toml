@@ -11,7 +11,7 @@ build_search_index = false
 theme = "xyblag-theme"
 
 # Theme related variables
-title = "Machine Learning Bytes"
+title = "Mini Bytes on Technology"
 description = " My Portfolio and Blog on 🤖 "
 
 # generate feed
