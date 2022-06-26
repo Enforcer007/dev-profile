@@ -1,5 +1,5 @@
 +++
-title = "How to check performance of Home Internet 🚀"
+title = "Checking performance of Home Internet 🚀"
 description = "Speed test's internet connection and displays the results in a graph daily using Airtable."
 date = 2022-06-06
 
