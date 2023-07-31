@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta
+        content="text/html; charset=utf-8" http-equiv="content-type"/> <!-- Enable responsiveness on mobile devices-->
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"/>
+        <title>
+            
+    Mini Bytes on Technology - Checking performance of Home Internet 🚀
+
+        </title>
+        <link href="https://blog.akhildevelops.co.in/favicon.ico" rel="icon" type="image/x-icon"/>
+        
+            <link rel="alternate" type= "application/atom+xml"  title="RSS" href="https://blog.akhildevelops.co.in/atom.xml"/>
+        
+        
+        
+    <meta content="website" property="og:type"/>
+    <meta content="Mini Bytes on Technology" property="og:site_name"/>
+    <meta content="https://blog.akhildevelops.co.in/blog/internet-speed-checker/" property="og:url"/>
+    <meta content="https://blog.akhildevelops.co.in/blog/internet-speed-checker/" property="twitter:url"/>
+    
+        <meta content="Checking performance of Home Internet 🚀" property="og:title"/>
+        <meta content="Checking performance of Home Internet 🚀" property="twitter:title"/>
+    
+    
+        <meta content="Speed test&#x27;s internet connection and displays the results in a graph daily using Airtable." property="description"/>
+        <meta content="Speed test&#x27;s internet connection and displays the results in a graph daily using Airtable." property="og:description"/>
+        <meta content="Speed test&#x27;s internet connection and displays the results in a graph daily using Airtable." property="twitter:description"/>
+    
+    
+        <meta content="summary_large_image" property="twitter:card"/>
+        <meta content="https://blog.akhildevelops.co.inthumbnail.png" property="og:image"/>
+        <meta content="https://blog.akhildevelops.co.inthumbnail.png" property="twitter:image"/>
+    
+
+        
+        
+            <script src="https://blog.akhildevelops.co.in/slideout.min.js" type="text/javascript"></script>
+            
+        
+        
+            <link href="https://blog.akhildevelops.co.in/site.css" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+            <link charset="utf-8" href="https://indestructibletype.com/fonts/Jost.css" rel="stylesheet" type="text/css"/>
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+            
+        
+        
+    </head>
+    <body>
+        <script>
+            (function initTheme() {
+                let body = document.getElementsByTagName("body")[0];
+                if (window.localStorage.getItem("theme") !== null) {
+                    if (window.localStorage.getItem("theme") === "dark") {
+                        body.setAttribute("data-theme", "dark");
+                    } else {
+                        body.setAttribute("data-theme", "light");
+                    }
+                } else {
+                    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                        body.setAttribute("data-theme", "light");
+                    }
+                }
+            })();
+        </script>
+        <div class="container">
+            <div class="mobile-navbar" id="mobile-navbar">
+                <div class="mobile-header-logo">
+                    <a class="logo" href="https:&#x2F;&#x2F;blog.akhildevelops.co.in">Mini Bytes on Technology</a>
+                </div>
+                <div class="mobile-navbar-icon icon-out">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav class="mobile-menu slideout-menu slideout-menu-left" id="mobile-menu">
+                <ul class="mobile-menu-list">
+                    
+                        <li class="mobile-menu-item">
+                            <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog">
+                                Blog
+                            </a>
+                        </li>
+                    
+                        <li class="mobile-menu-item">
+                            <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;categories">
+                                Categories
+                            </a>
+                        </li>
+                    
+                        <li class="mobile-menu-item">
+                            <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;tags">
+                                Tags
+                            </a>
+                        </li>
+                    
+                        <li class="mobile-menu-item">
+                            <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;about">
+                                MyProfile
+                            </a>
+                        </li>
+                    
+                    <li class="mobile-menu-item">
+                        <div class="theme-switcher">
+                            
+    <div class="theme-button" onClick="toggleTheme()">
+        <label for="cb1">
+            <svg
+                id="dayIcon"
+                style="enable-background:new 0 0 35 35;"
+                version="1.1"
+                viewBox="0 0 35 35"
+                x="0px"
+                xml:space="preserve"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px">
+                <g id="Sun">
+                    <g>
+                        <path
+                            d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5 S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z
+                                M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5
+                                C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6
+                                C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9
+                                c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44
+                                l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5
+                                c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06 L6.439,8.561z
+                                M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z
+                                M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2
+                                C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29
+                                c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7
+                                C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5
+                                c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"
+                            style="fill-rule:evenodd;clip-rule:evenodd;"/>
+                    </g>
+                </g>
+            </svg>
+        </label>
+        <input class="toggle" id="cb1" onClick="toggleTheme()" type="checkbox"/>
+        <label class="toggle-button" for="cb1"></label>
+        <label for="cb1">
+            <svg
+                enable-background="new 0 0 100 100"
+                id="nightIcon"
+                version="1.1"
+                viewBox="0 0 100 100"
+                x="0px"
+                xml:space="preserve"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px">
+                <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571
+                C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23
+                c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369
+                c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65 c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"/>
+            </svg>
+        </label>
+    </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+                
+    <header id="header">
+        <div class="logo">
+            <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in">Mini Bytes on Technology</a>
+        </div>
+        
+    <nav class="menu">
+        <ul>
+            
+                <li>
+                    <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog">
+                        Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;categories">
+                        Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;tags">
+                        Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;about">
+                        MyProfile
+                    </a>
+                </li>
+            
+            <div class="theme-switcher">
+                
+    <div class="theme-button" onClick="toggleTheme()">
+        <label for="cb1">
+            <svg
+                id="dayIcon"
+                style="enable-background:new 0 0 35 35;"
+                version="1.1"
+                viewBox="0 0 35 35"
+                x="0px"
+                xml:space="preserve"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px">
+                <g id="Sun">
+                    <g>
+                        <path
+                            d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5 S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z
+                                M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5
+                                C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6
+                                C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9
+                                c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44
+                                l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5
+                                c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06 L6.439,8.561z
+                                M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z
+                                M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2
+                                C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29
+                                c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7
+                                C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5
+                                c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"
+                            style="fill-rule:evenodd;clip-rule:evenodd;"/>
+                    </g>
+                </g>
+            </svg>
+        </label>
+        <input class="toggle" id="cb1" onClick="toggleTheme()" type="checkbox"/>
+        <label class="toggle-button" for="cb1"></label>
+        <label for="cb1">
+            <svg
+                enable-background="new 0 0 100 100"
+                id="nightIcon"
+                version="1.1"
+                viewBox="0 0 100 100"
+                x="0px"
+                xml:space="preserve"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px">
+                <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571
+                C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23
+                c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369
+                c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65 c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"/>
+            </svg>
+        </label>
+    </div>
+
+            </div>
+        </ul>
+    </nav>
+
+    </header>
+
+            
+            <main>
+                <div class="content" id="mobile-panel"> 
+    
+        <div class="post-toc" id="post-toc">
+            <div class="toc-wrapper">
+                <h2 class="post-toc-title">Contents</h2>
+                <div class="post-toc-content always-active">
+                    <nav id="TableOfContents">
+                        <ul>
+                            
+                                <li>
+                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#how-to-build-it">How to build it ?</a>
+                                    
+                                        <ul>
+                                            
+                                                <li>
+                                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#create-airtable-account">Create Airtable Account</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#testrun-speedtest-in-local-machine">TestRun speedtest in local machine</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#raspberrypi-setup">Raspberrypi Setup</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#cross-compiling-from-local-machine-to-build-an-executable-for-raspberrypi">Cross Compiling from local machine to build an executable for Raspberrypi</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#installing-in-raspberrypi-and-setting-up-cron-job">Installing in Raspberrypi and setting up Cron Job</a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#visualizing-the-dashboard-in-airtable">Visualizing the Dashboard in Airtable</a>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <a class="toc-link" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/#mailbox-how-to-reach-me">📫 How to reach me</a>
+                                    
+                                </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    
+    <article class="post">
+        
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;internet-speed-checker&#x2F;">Checking performance of Home Internet 🚀</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-06-06</span>
+            
+                <div class="post__category">
+                    
+                        <a href="https://blog.akhildevelops.co.in/categories/technology/">Technology</a>
+                    
+                </div>
+            
+        </div>
+    </header>
+
+        <div class="post-content">
+            <div class="cover-image">
+  <img src="cover.webp"/>
+  <p class="desc">
+    Speed Test
+  </p>
+</div>
+<p>I have recently subscribed to a new ISP(Internet Service Provider) for upgrading my Internet Speed Download and Upload Speeds to 150Mbps. 
+During the first week the speed was good but slowly the service from the ISP started deteriorating. The speeds were varying drastically and currently it's hovering around <ins>77Mbps</ins> for downloads and <ins>30Mbps</ins> for Uploads.</p>
+<p>The ISP would increase the speeds, whenever I complain them. But after some time again they decrease. Recently, I've started going to <a href="https://www.speedtest.net/">www.speedtest.net</a> website regularly to keep a tab on the speeds. But it's very painful to repeatedly open the site and test the internet speeds. Therefore I've created an <strong>Internet Speed Test App</strong> hosted it on Raspberrypi that runs every Hour. The results are recorded into Airtable and visualized in a graph.</p>
+<h2 id="how-to-build-it">How to build it ?</h2>
+<p>I built the App using Rustlang 🦀. I've cross-compiled the application to Raspberrypi model 1 executable using <a href="https://github.com/raspberrypi/tools">raspi_tools</a>.</p>
+<p>I've tried to build the App from scratch but the results weren't true to the speedtest.net results. I stopped working on it as my objective was to get an app that can push speedtest results to Airtable. Using speedtest-cli from Ookla I was able to fork the speedtest app from Rust and obtain the results. Here's how I made it.</p>
+<p>As I'm running on ubuntu I've installed the speedtest-cli from this <a href="https://www.speedtest.net/apps/cli">link</a>. After Installing test it by running <code>speedtest</code> command from terminal. <img src="https://blog.akhildevelops.co.in/blog/internet-speed-checker/./sample.gif" alt="sample" /></p>
+<h3 id="create-airtable-account">Create Airtable Account</h3>
+<p>Create an <a href="https://airtable.com/signup#">Airtable Account</a> and <a href="https://airtable.com/">create a base</a>. <img src="https://blog.akhildevelops.co.in/blog/internet-speed-checker/./Airtable-Base.png" alt="sample" /></p>
+<p>Goto <a href="https://airtable.com/account">Account Overview</a> and get the API KEY to insert speedtest records into Airtable. Also fetch the base ID of the table
+from rest API docs <img src="https://blog.akhildevelops.co.in/blog/internet-speed-checker/./Airtable_Base_Id.png" alt="BaseID" /></p>
+<h3 id="testrun-speedtest-in-local-machine">TestRun speedtest in local machine</h3>
+<p>Git clone the <a href="https://github.com/Enforcer007/rustyspeedtest">speedtest repo</a> and run below command to check if speedtest and insertion works properly</p>
+<blockquote>
+<p>Please refer to <a href="https://rustup.rs/">https://rustup.rs/</a> for installing Rustlang along with Cargo.</p>
+</blockquote>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6699cc;">env AIRTABLE_BASE_ID=xxxxx AIRTABLE_AUTH_KEY=xxxxxxxx cargo run
+</span></code></pre>
+<p>Speedtest will be run followed by insertion of results into the Airtable. Verify the results in the table. <img src="https://blog.akhildevelops.co.in/blog/internet-speed-checker/./Airtable-Results.png" alt="SpeedTest Results" /></p>
+<h3 id="raspberrypi-setup">Raspberrypi Setup</h3>
+<p>After everything goes well! #emoji. It's time to build the app for Raspberrypi.</p>
+<p>Connect to Raspberrypi from terminal and install, extract the <a href="https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-armhf.tgz">speedtest-cli</a> application</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6699cc;">curl https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-armhf.tgz</span><span style="color:#5fb3b3;"> -</span><span style="color:#f99157;">o</span><span style="color:#6699cc;"> speedtest.tgz
+</span><span>
+</span><span style="color:#6699cc;">tar zxvf ookla-speedtest.tgz</span><span style="color:#5fb3b3;"> -</span><span style="color:#f99157;">C</span><span style="color:#6699cc;"> ./ookla
+</span></code></pre>
+<p>Run the speedtest command to test if it's running in Raspberrypi</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6699cc;">ookla/speedtest
+</span></code></pre>
+<h3 id="cross-compiling-from-local-machine-to-build-an-executable-for-raspberrypi">Cross Compiling from local machine to build an executable for Raspberrypi</h3>
+<p>After the test run, let's cross compile <code>speedtest</code> to raspberrypi to be compatible. Let's setup few dependencies for cross compilation in Ubuntu.</p>
+<p>git clone <a href="https://github.com/raspberrypi/tools.git">raspi_tools</a> and set the path of linker present in the folder at <code>~/.cargo/config</code> as</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6699cc;">[target.arm-unknown-linux-gnueabihf]
+</span><span style="color:#6699cc;">linker = </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">&lt;parent-path&gt;/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc</span><span style="color:#5fb3b3;">&quot;
+</span></code></pre>
+<p>Also rust should know the target architecture of the raspberrypi. Let's add by running below command.</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6699cc;">rustup add arm-unknown-linux-gnueabihf
+</span></code></pre>
+<p>Add Raspberrypi's ip-address in <code>deploy.sh</code>.</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span>
+</span><span style="color:#c594c5;">readonly </span><span>TARGET_HOST</span><span style="color:#5fb3b3;">=&lt;</span><span style="color:#6699cc;">user</span><span style="color:#5fb3b3;">&gt;</span><span style="color:#6699cc;">@</span><span style="color:#5fb3b3;">&lt;</span><span style="color:#6699cc;">ip-address</span><span style="color:#5fb3b3;">&gt;
+</span><span>
+</span></code></pre>
+<h3 id="installing-in-raspberrypi-and-setting-up-cron-job">Installing in Raspberrypi and setting up Cron Job</h3>
+<p>Run the <code>deploy.sh</code> file after the changing the Ip-Address. It runs the <code>cargo build</code> command and generates the executable suitable to run on raspberrypi. After which it pushes the executable to Raspberrypi using rsync.</p>
+<p>Validate that the executable is present in raspberrypi at the path <code>/home/pi/speedtest</code>. Run the executable as below to verify the records are inserted into Airtable.</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6699cc;">env AIRTABLE_BASE_ID=xxxxx AIRTABLE_AUTH_KEY=xxxxxxxx /home/pi/speedtest
+</span></code></pre>
+<p>If everything works good, speedtest records are inserted into Airtable and now we can setup a Cron Job.</p>
+<p>To setup cron job for every <ins>one hr at 43rd minute</ins> open the crontab file by running <code>crontab -e</code> and write below lines.</p>
+<pre data-lang="bash" style="background-color:#2b2c2f;color:#cccece;" class="language-bash "><code class="language-bash" data-lang="bash"><span>AIRTABLE_BASE_ID</span><span style="color:#5fb3b3;">=</span><span style="color:#99c794;">xxxxxxx
+</span><span>AIRTABLE_AUTH_KEY</span><span style="color:#5fb3b3;">=</span><span style="color:#99c794;">xxxxxxxxx
+</span><span>PATH</span><span style="color:#5fb3b3;">=</span><span style="color:#99c794;">/home/pi/ookla:</span><span style="color:#5fb3b3;">$</span><span>PATH
+</span><span style="color:#6699cc;">43 </span><span style="color:#5fb3b3;">*</span><span style="color:#6699cc;">/1 </span><span style="color:#5fb3b3;">* * *</span><span style="color:#6699cc;"> /home/pi/speedtest </span><span style="color:#5fb3b3;">&gt;&gt;</span><span style="color:#6699cc;"> /home/pi/speedtest.log
+</span><span>
+</span></code></pre>
+<h3 id="visualizing-the-dashboard-in-airtable">Visualizing the Dashboard in Airtable</h3>
+<p>It's Done! The speedtest is run every one hr on raspberrypi and results are recorded in the Airtable. It's dull and boring to see all the records in a table. Let's visualize it in a graph.</p>
+<p>Goto App Sections in the Airtable and click on Add an App. From there search for <strong>Vega-Lite</strong> app to add it.
+<img src="https://blog.akhildevelops.co.in/blog/internet-speed-checker/./airtable-app.gif" alt="Airtable-App" /></p>
+<p>Select the table from the drop down after adding and paste the below json to visulaize the download data.</p>
+<pre data-lang="json" style="background-color:#2b2c2f;color:#cccece;" class="language-json "><code class="language-json" data-lang="json"><span style="color:#5fb3b3;">{
+</span><span>  </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">$schema</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">https://vega.github.io/schema/vega-lite/v4.json</span><span style="color:#5fb3b3;">&quot;,
+</span><span>  </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">title</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">Table 1</span><span style="color:#5fb3b3;">&quot;,
+</span><span>  </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">width</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">container</span><span style="color:#5fb3b3;">&quot;,
+</span><span>  </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">height</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">container</span><span style="color:#5fb3b3;">&quot;,
+</span><span>  </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">mark</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">line</span><span style="color:#5fb3b3;">&quot;,
+</span><span>  </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">encoding</span><span style="color:#5fb3b3;">&quot;: {
+</span><span>    </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">x</span><span style="color:#5fb3b3;">&quot;: {
+</span><span>      </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">field</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">timestamp</span><span style="color:#5fb3b3;">&quot;,
+</span><span>      </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">type</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">temporal</span><span style="color:#5fb3b3;">&quot;
+</span><span>    </span><span style="color:#5fb3b3;">},
+</span><span>    </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">y</span><span style="color:#5fb3b3;">&quot;: {
+</span><span>      </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">field</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">download</span><span style="color:#5fb3b3;">&quot;,
+</span><span>      </span><span style="color:#5fb3b3;">&quot;</span><span style="color:#99c794;">type</span><span style="color:#5fb3b3;">&quot;: &quot;</span><span style="color:#99c794;">quantitative</span><span style="color:#5fb3b3;">&quot;
+</span><span>    </span><span style="color:#5fb3b3;">}
+</span><span>  </span><span style="color:#5fb3b3;">}
+</span><span style="color:#5fb3b3;">}
+</span></code></pre>
+<p>Repeat the same step i.e, adding an app for visualizing the upload speed column and change the y-field to upload.</p>
+<p>Yipee Here we have the Dashboard visualizing the Results.</p>
+<p><strong>Currently my home network's Internet Speed Graph's can be seen here:</strong></p>
+<iframe class="airtable-embed" src="https://airtable.com/embed/shr6keYVxjy6V0maD?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<h2 id="mailbox-how-to-reach-me">📫 How to reach me</h2>
+<p>I'm always active on Twitter. You can follow me at <a href="https://mobile.twitter.com/143akhi"><img src="https://img.shields.io/twitter/follow/143akhi?style=social" alt="Twitter Follow" /></a></p>
+
+        </div>
+        
+        <!-- <div
+            class="end-post">
+        </div> -->
+        <div class="post-footer">
+            
+                
+                    <div class="post-tags">
+                        
+                            <a href="https://blog.akhildevelops.co.in/tags/speedtest/">
+                                <span class="hashtag">#</span>
+                                speedtest</a>
+                        
+                            <a href="https://blog.akhildevelops.co.in/tags/raspberrypi/">
+                                <span class="hashtag">#</span>
+                                raspberrypi</a>
+                        
+                    </div>
+                
+                
+                
+
+
+            
+        </div>
+        
+    </article>
+
+                    
+                        <footer>
+                            <div class="copyright">
+                                &#169;<script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                Akhil
+                            </div>
+                            <div class="made-with">
+                                Made with
+                                <a href="https://www.getzola.org/" rel="noopener noreferrer" target="_blank">Zola</a>,
+                                <a href="https://github.com/xypnox/blag/tree/master/themes/xyblag" rel="noopener noreferrer" target="_blank">Theme</a>
+                                by
+                                <a href="https://www.xypnox.com/" rel="noopener noreferrer" target="_blank">xypnox</a>.
+                            </div>
+                        </footer>
+                    
+                </div>
+            </main>
+        </div>
+        
+            <script src="https://blog.akhildevelops.co.in/main.js" type="text/javascript"></script>
+        
+    </body>
+</html>

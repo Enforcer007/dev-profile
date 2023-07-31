@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Mini Bytes on Technology - Trading</title>
+    <subtitle> My Portfolio and Blog on 🤖 </subtitle>
+    <link href="https://blog.akhildevelops.co.in/categories/trading/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.akhildevelops.co.in"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-09-04T00:00:00+00:00</updated>
+    <id>https://blog.akhildevelops.co.in/categories/trading/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Gap Up Gap Down Trading</title>
+        <published>2021-09-04T00:00:00+00:00</published>
+        <updated>2021-09-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://blog.akhildevelops.co.in/blog/1-gap-up-gap-down/" type="text/html"/>
+        <id>https://blog.akhildevelops.co.in/blog/1-gap-up-gap-down/</id>
+        
+        <content type="html">&lt;div class=&quot;cover-image&quot;&gt;
+  &lt;img src=&quot;cover.png&quot;&#x2F;&gt;
+  &lt;p class=&quot;desc&quot;&gt;
+    Gap Up and Gap Down
+  &lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We will try to analyse what should be our directional view for intra-day trades when market gaps up&#x2F;down.&lt;&#x2F;p&gt;
+&lt;p&gt;Generally, when the market gap&#x27;s up we expect to see there&#x27;s a bullish view on stock and similarly for gap down a bearish view.&lt;&#x2F;p&gt;
+&lt;p&gt;Keeping that in mind let&#x27;s pick PNB stock for this analysis and lets try to see how the share price performed in a day during gap up&#x2F;gap down days.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;1-gap-up-gap-down&#x2F;thumbnail.jpg&quot; alt=&quot;gap-range&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This graph tells movement of shares price in a given day when there&#x27;s a gap up&#x2F;down of more than 4%.&lt;&#x2F;p&gt;
+&lt;p&gt;We can observe that most of the days are concentrated in two areas covered in rectangles.&lt;&#x2F;p&gt;
+&lt;p&gt;Surprisingly, we can see there&#x27;s inverse relation. If there&#x27;s a gap up we can see day ended in loss that appears in the Green rectangle. Similarly if there&#x27;s a gap down we can observe day ended high as observed in Red rectangle.&lt;&#x2F;p&gt;
+&lt;p&gt;To make more sense consider the day when there was the highest gap-up i.e on 2002-07-15 @18% if we observe the day went down by -12.92% 😲. If a trader with bullish view takes a long call then he would have definitely hit loss 😭.&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore it is suggested to, preferably take reverse calls whenever there&#x27;s a gap up&#x2F;down i.e, taking short and long calls respectively. ❗(Not an advisory)&lt;&#x2F;p&gt;
+&lt;p&gt;We can also see out of all the gap opening days, how many short&#x2F;long opportunities can be grabbed.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;1-gap-up-gap-down&#x2F;stats.jpg&quot; alt=&quot;stats&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For doubts, questions or want to know Elon Musk&#x27;s next tweet on bitcoin, reachme out on twitter: @143akhi&lt;&#x2F;p&gt;
+&lt;p&gt;Click below on streamlit for an interactive tour of the above strategy.&lt;&#x2F;p&gt;
+&lt;p style=&#x27;align: left;&#x27;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;share.streamlit.io&#x2F;enforcer007&#x2F;streamlit&#x2F;main&#x2F;app.py&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;static.streamlit.io&#x2F;badges&#x2F;streamlit_badge_black_white.svg&quot; alt=&quot;Streamlit App&quot;&gt;&lt;&#x2F;img&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

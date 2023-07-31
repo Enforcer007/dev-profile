@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Mini Bytes on Technology - f1-score</title>
+    <subtitle> My Portfolio and Blog on 🤖 </subtitle>
+    <link href="https://blog.akhildevelops.co.in/tags/f1-score/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.akhildevelops.co.in"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-09-28T00:00:00+00:00</updated>
+    <id>https://blog.akhildevelops.co.in/tags/f1-score/atom.xml</id>
+    <entry xml:lang="en">
+        <title>What is Micro Averaged F1 Score</title>
+        <published>2021-09-28T00:00:00+00:00</published>
+        <updated>2021-09-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://blog.akhildevelops.co.in/blog/micro-average-f1/" type="text/html"/>
+        <id>https://blog.akhildevelops.co.in/blog/micro-average-f1/</id>
+        
+        <content type="html">&lt;div class=&quot;cover-image&quot;&gt;
+  &lt;img src=&quot;thumbnail.png&quot;&#x2F;&gt;
+  &lt;p class=&quot;desc&quot;&gt;
+    Confusion Matrix
+  &lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;&lt;h4 id=&quot;f1-score&quot;&gt;F1 Score&lt;&#x2F;h4&gt;
+&lt;p&gt;F1 Score is harmonic mean of Precision and Recall.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;svgshare.com&#x2F;i&#x2F;M7d.svg&quot; alt=&quot;F1 Score&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;precision&quot;&gt;Precision&lt;&#x2F;h4&gt;
+&lt;p&gt;It tells you how weak is your model in predicting positive Classes. If number of False Positives are more than True Positives then your model has less precision.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;recall&quot;&gt;Recall&lt;&#x2F;h4&gt;
+&lt;p&gt;It tells you how weak is your model in covering True Classes. If number of False Negatives are more than True Positives then your model has less recall.&lt;&#x2F;p&gt;
+&lt;p&gt;For more info on Precision and Recall, &lt;a href=&quot;https:&#x2F;&#x2F;towardsdatascience.com&#x2F;multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&quot;&gt;Click Here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;F1-Score can be easily calculated for a binary classification Problem.&lt;&#x2F;li&gt;
+&lt;li&gt;What if we have multi-class classification ? How can we calculate F1-Score and if calculated for each label how can we merge &#x2F; consolidate them ?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Let&#x27;s try to address these questions by considering an Example:&lt;&#x2F;p&gt;
+&lt;p&gt;We have a dataset of 3 Labels Cat, Dog and Fish. We have built a multi-class classifier that predicts one label among these 3 labels and let&#x27;s consider below as the the outputs for each Label. (One vs All)&lt;&#x2F;p&gt;
+&lt;p&gt;The above values can be represented as below confusion Matrix:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;swZrksj&#x2F;Screenshot-from-2020-06-17-14-13-01.png&quot; alt=&quot;Confusion Matrix&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;From the above table we can deduce the following for each Label:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Animals&lt;&#x2F;th&gt;&lt;th&gt;TP&lt;&#x2F;th&gt;&lt;th&gt;FP&lt;&#x2F;th&gt;&lt;th&gt;FN&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Cat&lt;&#x2F;td&gt;&lt;td&gt;10&lt;&#x2F;td&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Dog&lt;&#x2F;td&gt;&lt;td&gt;20&lt;&#x2F;td&gt;&lt;td&gt;11&lt;&#x2F;td&gt;&lt;td&gt;12&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Fish&lt;&#x2F;td&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;td&gt;12&lt;&#x2F;td&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Now F-1 Score for each label can be calculated by calculating individual Precisions and Recalls by&lt;&#x2F;p&gt;
+&lt;p&gt;Precision = T.P &#x2F; (T.P + F.P)
+Recall = T.P &#x2F; (T.P + F.N)&lt;&#x2F;p&gt;
+&lt;p&gt;Ex: For Cat we have the following:
+Precision = 10 &#x2F; (10+15) = 0.4
+Recall = 10 &#x2F; (10+13) = 0.43&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore F1-Score for &lt;strong&gt;Cat is 0.414&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Similarly F1-Scores for other labels are &lt;strong&gt;Dog: 0.635, Fish: 0.51&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We acheived F1 Scores for independent Labels. How can we aggregate these F1-Scores into a single F1-Score for evaluating the Model ?&lt;&#x2F;p&gt;
+&lt;p&gt;We have two type of Aggregations:
+&lt;strong&gt;Macro Averaged F1-Score and Micro-Averaged F1-Score&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;macro-averaged-f1-score&quot;&gt;Macro Averaged F1-Score&lt;&#x2F;h4&gt;
+&lt;p&gt;Here we simple average all the F1-Scores and calculate a mean F1-Score.&lt;&#x2F;p&gt;
+&lt;p&gt;Average of all the F1-Scores result in &lt;strong&gt;0.52&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;But simply averaging all the F1-Scores isn&#x27;t a fair way to estimate a model perfomance. Because this metric doesn&#x27;t perform good on imbalanced dataset. A good explaination on the same can be &lt;a href=&quot;https:&#x2F;&#x2F;datascience.stackexchange.com&#x2F;questions&#x2F;15989&#x2F;micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin&quot;&gt;found here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;micro-averaged-f1-score&quot;&gt;Micro Averaged F1-Score&lt;&#x2F;h4&gt;
+&lt;p&gt;Here instead of calculating each label&#x27;s F1-Score, we derive the F1-Score by calculating Precision and Recall by summing all the TPs and Type Errors instead of calculating for each Label:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;Total T&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;Ps &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;20&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;13 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;43
+&lt;&#x2F;span&gt;&lt;span&gt;Total F&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;Ps &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;15&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;11&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;12 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;38
+&lt;&#x2F;span&gt;&lt;span&gt;Total F&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;Ns &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;13&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;13 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;39
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Precision &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;43&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&#x2F;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;43&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;38&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;) = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;53
+&lt;&#x2F;span&gt;&lt;span&gt;Recall &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;524
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;F1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;Score &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;526
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Micro Averaged f1 score is one of the metric to be used for validation of multi-class classifier.&lt;&#x2F;p&gt;
+&lt;p&gt;Scikitlearn offers computation of micro average f1 score on the fly through the function &lt;a href=&quot;https:&#x2F;&#x2F;scikit-learn.org&#x2F;stable&#x2F;modules&#x2F;generated&#x2F;sklearn.metrics.f1_score.html&quot;&gt;&lt;code&gt;sklearn.metrics.f1_score&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Mini Bytes on Technology</title>
+    <subtitle> My Portfolio and Blog on 🤖 </subtitle>
+    <link href="https://blog.akhildevelops.co.in/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://blog.akhildevelops.co.in"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-06-06T00:00:00+00:00</updated>
+    <id>https://blog.akhildevelops.co.in/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Checking performance of Home Internet 🚀</title>
+        <published>2022-06-06T00:00:00+00:00</published>
+        <updated>2022-06-06T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://blog.akhildevelops.co.in/blog/internet-speed-checker/" type="text/html"/>
+        <id>https://blog.akhildevelops.co.in/blog/internet-speed-checker/</id>
+        
+        <content type="html">&lt;div class=&quot;cover-image&quot;&gt;
+  &lt;img src=&quot;cover.webp&quot;&#x2F;&gt;
+  &lt;p class=&quot;desc&quot;&gt;
+    Speed Test
+  &lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I have recently subscribed to a new ISP(Internet Service Provider) for upgrading my Internet Speed Download and Upload Speeds to 150Mbps. 
+During the first week the speed was good but slowly the service from the ISP started deteriorating. The speeds were varying drastically and currently it&#x27;s hovering around &lt;ins&gt;77Mbps&lt;&#x2F;ins&gt; for downloads and &lt;ins&gt;30Mbps&lt;&#x2F;ins&gt; for Uploads.&lt;&#x2F;p&gt;
+&lt;p&gt;The ISP would increase the speeds, whenever I complain them. But after some time again they decrease. Recently, I&#x27;ve started going to &lt;a href=&quot;https:&#x2F;&#x2F;www.speedtest.net&#x2F;&quot;&gt;www.speedtest.net&lt;&#x2F;a&gt; website regularly to keep a tab on the speeds. But it&#x27;s very painful to repeatedly open the site and test the internet speeds. Therefore I&#x27;ve created an &lt;strong&gt;Internet Speed Test App&lt;&#x2F;strong&gt; hosted it on Raspberrypi that runs every Hour. The results are recorded into Airtable and visualized in a graph.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-to-build-it&quot;&gt;How to build it ?&lt;&#x2F;h2&gt;
+&lt;p&gt;I built the App using Rustlang 🦀. I&#x27;ve cross-compiled the application to Raspberrypi model 1 executable using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raspberrypi&#x2F;tools&quot;&gt;raspi_tools&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve tried to build the App from scratch but the results weren&#x27;t true to the speedtest.net results. I stopped working on it as my objective was to get an app that can push speedtest results to Airtable. Using speedtest-cli from Ookla I was able to fork the speedtest app from Rust and obtain the results. Here&#x27;s how I made it.&lt;&#x2F;p&gt;
+&lt;p&gt;As I&#x27;m running on ubuntu I&#x27;ve installed the speedtest-cli from this &lt;a href=&quot;https:&#x2F;&#x2F;www.speedtest.net&#x2F;apps&#x2F;cli&quot;&gt;link&lt;&#x2F;a&gt;. After Installing test it by running &lt;code&gt;speedtest&lt;&#x2F;code&gt; command from terminal. &lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;internet-speed-checker&#x2F;.&#x2F;sample.gif&quot; alt=&quot;sample&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;create-airtable-account&quot;&gt;Create Airtable Account&lt;&#x2F;h3&gt;
+&lt;p&gt;Create an &lt;a href=&quot;https:&#x2F;&#x2F;airtable.com&#x2F;signup#&quot;&gt;Airtable Account&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;airtable.com&#x2F;&quot;&gt;create a base&lt;&#x2F;a&gt;. &lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;internet-speed-checker&#x2F;.&#x2F;Airtable-Base.png&quot; alt=&quot;sample&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Goto &lt;a href=&quot;https:&#x2F;&#x2F;airtable.com&#x2F;account&quot;&gt;Account Overview&lt;&#x2F;a&gt; and get the API KEY to insert speedtest records into Airtable. Also fetch the base ID of the table
+from rest API docs &lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;internet-speed-checker&#x2F;.&#x2F;Airtable_Base_Id.png&quot; alt=&quot;BaseID&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;testrun-speedtest-in-local-machine&quot;&gt;TestRun speedtest in local machine&lt;&#x2F;h3&gt;
+&lt;p&gt;Git clone the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Enforcer007&#x2F;rustyspeedtest&quot;&gt;speedtest repo&lt;&#x2F;a&gt; and run below command to check if speedtest and insertion works properly&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please refer to &lt;a href=&quot;https:&#x2F;&#x2F;rustup.rs&#x2F;&quot;&gt;https:&#x2F;&#x2F;rustup.rs&#x2F;&lt;&#x2F;a&gt; for installing Rustlang along with Cargo.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;env AIRTABLE_BASE_ID=xxxxx AIRTABLE_AUTH_KEY=xxxxxxxx cargo run
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Speedtest will be run followed by insertion of results into the Airtable. Verify the results in the table. &lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;internet-speed-checker&#x2F;.&#x2F;Airtable-Results.png&quot; alt=&quot;SpeedTest Results&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;raspberrypi-setup&quot;&gt;Raspberrypi Setup&lt;&#x2F;h3&gt;
+&lt;p&gt;After everything goes well! #emoji. It&#x27;s time to build the app for Raspberrypi.&lt;&#x2F;p&gt;
+&lt;p&gt;Connect to Raspberrypi from terminal and install, extract the &lt;a href=&quot;https:&#x2F;&#x2F;install.speedtest.net&#x2F;app&#x2F;cli&#x2F;ookla-speedtest-1.1.1-linux-armhf.tgz&quot;&gt;speedtest-cli&lt;&#x2F;a&gt; application&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;curl https:&#x2F;&#x2F;install.speedtest.net&#x2F;app&#x2F;cli&#x2F;ookla-speedtest-1.1.1-linux-armhf.tgz&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt; -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;o&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt; speedtest.tgz
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;tar zxvf ookla-speedtest.tgz&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt; -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;C&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt; .&#x2F;ookla
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Run the speedtest command to test if it&#x27;s running in Raspberrypi&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;ookla&#x2F;speedtest
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;cross-compiling-from-local-machine-to-build-an-executable-for-raspberrypi&quot;&gt;Cross Compiling from local machine to build an executable for Raspberrypi&lt;&#x2F;h3&gt;
+&lt;p&gt;After the test run, let&#x27;s cross compile &lt;code&gt;speedtest&lt;&#x2F;code&gt; to raspberrypi to be compatible. Let&#x27;s setup few dependencies for cross compilation in Ubuntu.&lt;&#x2F;p&gt;
+&lt;p&gt;git clone &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raspberrypi&#x2F;tools.git&quot;&gt;raspi_tools&lt;&#x2F;a&gt; and set the path of linker present in the folder at &lt;code&gt;~&#x2F;.cargo&#x2F;config&lt;&#x2F;code&gt; as&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;[target.arm-unknown-linux-gnueabihf]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;linker = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;&amp;lt;parent-path&amp;gt;&#x2F;tools&#x2F;arm-bcm2708&#x2F;arm-rpi-4.9.3-linux-gnueabihf&#x2F;bin&#x2F;arm-linux-gnueabihf-gcc&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Also rust should know the target architecture of the raspberrypi. Let&#x27;s add by running below command.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;rustup add arm-unknown-linux-gnueabihf
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Add Raspberrypi&#x27;s ip-address in &lt;code&gt;deploy.sh&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c594c5;&quot;&gt;readonly &lt;&#x2F;span&gt;&lt;span&gt;TARGET_HOST&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;=&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;user&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;ip-address&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;installing-in-raspberrypi-and-setting-up-cron-job&quot;&gt;Installing in Raspberrypi and setting up Cron Job&lt;&#x2F;h3&gt;
+&lt;p&gt;Run the &lt;code&gt;deploy.sh&lt;&#x2F;code&gt; file after the changing the Ip-Address. It runs the &lt;code&gt;cargo build&lt;&#x2F;code&gt; command and generates the executable suitable to run on raspberrypi. After which it pushes the executable to Raspberrypi using rsync.&lt;&#x2F;p&gt;
+&lt;p&gt;Validate that the executable is present in raspberrypi at the path &lt;code&gt;&#x2F;home&#x2F;pi&#x2F;speedtest&lt;&#x2F;code&gt;. Run the executable as below to verify the records are inserted into Airtable.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;env AIRTABLE_BASE_ID=xxxxx AIRTABLE_AUTH_KEY=xxxxxxxx &#x2F;home&#x2F;pi&#x2F;speedtest
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If everything works good, speedtest records are inserted into Airtable and now we can setup a Cron Job.&lt;&#x2F;p&gt;
+&lt;p&gt;To setup cron job for every &lt;ins&gt;one hr at 43rd minute&lt;&#x2F;ins&gt; open the crontab file by running &lt;code&gt;crontab -e&lt;&#x2F;code&gt; and write below lines.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;AIRTABLE_BASE_ID&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;xxxxxxx
+&lt;&#x2F;span&gt;&lt;span&gt;AIRTABLE_AUTH_KEY&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;xxxxxxxxx
+&lt;&#x2F;span&gt;&lt;span&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;&#x2F;home&#x2F;pi&#x2F;ookla:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;PATH
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;43 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt;&#x2F;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt; &#x2F;home&#x2F;pi&#x2F;speedtest &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#6699cc;&quot;&gt; &#x2F;home&#x2F;pi&#x2F;speedtest.log
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;visualizing-the-dashboard-in-airtable&quot;&gt;Visualizing the Dashboard in Airtable&lt;&#x2F;h3&gt;
+&lt;p&gt;It&#x27;s Done! The speedtest is run every one hr on raspberrypi and results are recorded in the Airtable. It&#x27;s dull and boring to see all the records in a table. Let&#x27;s visualize it in a graph.&lt;&#x2F;p&gt;
+&lt;p&gt;Goto App Sections in the Airtable and click on Add an App. From there search for &lt;strong&gt;Vega-Lite&lt;&#x2F;strong&gt; app to add it.
+&lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;internet-speed-checker&#x2F;.&#x2F;airtable-app.gif&quot; alt=&quot;Airtable-App&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Select the table from the drop down after adding and paste the below json to visulaize the download data.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;$schema&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;https:&#x2F;&#x2F;vega.github.io&#x2F;schema&#x2F;vega-lite&#x2F;v4.json&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;Table 1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;width&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;container&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;height&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;container&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;mark&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;line&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;encoding&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;x&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;field&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;timestamp&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;temporal&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;field&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;download&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#99c794;&quot;&gt;quantitative&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Repeat the same step i.e, adding an app for visualizing the upload speed column and change the y-field to upload.&lt;&#x2F;p&gt;
+&lt;p&gt;Yipee Here we have the Dashboard visualizing the Results.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Currently my home network&#x27;s Internet Speed Graph&#x27;s can be seen here:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;iframe class=&quot;airtable-embed&quot; src=&quot;https:&#x2F;&#x2F;airtable.com&#x2F;embed&#x2F;shr6keYVxjy6V0maD?backgroundColor=red&quot; frameborder=&quot;0&quot; onmousewheel=&quot;&quot; width=&quot;100%&quot; height=&quot;533&quot; style=&quot;background: transparent; border: 1px solid #ccc;&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;h2 id=&quot;mailbox-how-to-reach-me&quot;&gt;📫 How to reach me&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;m always active on Twitter. You can follow me at &lt;a href=&quot;https:&#x2F;&#x2F;mobile.twitter.com&#x2F;143akhi&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;img.shields.io&#x2F;twitter&#x2F;follow&#x2F;143akhi?style=social&quot; alt=&quot;Twitter Follow&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>What is Micro Averaged F1 Score</title>
+        <published>2021-09-28T00:00:00+00:00</published>
+        <updated>2021-09-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://blog.akhildevelops.co.in/blog/micro-average-f1/" type="text/html"/>
+        <id>https://blog.akhildevelops.co.in/blog/micro-average-f1/</id>
+        
+        <content type="html">&lt;div class=&quot;cover-image&quot;&gt;
+  &lt;img src=&quot;thumbnail.png&quot;&#x2F;&gt;
+  &lt;p class=&quot;desc&quot;&gt;
+    Confusion Matrix
+  &lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;&lt;h4 id=&quot;f1-score&quot;&gt;F1 Score&lt;&#x2F;h4&gt;
+&lt;p&gt;F1 Score is harmonic mean of Precision and Recall.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;svgshare.com&#x2F;i&#x2F;M7d.svg&quot; alt=&quot;F1 Score&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;precision&quot;&gt;Precision&lt;&#x2F;h4&gt;
+&lt;p&gt;It tells you how weak is your model in predicting positive Classes. If number of False Positives are more than True Positives then your model has less precision.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;recall&quot;&gt;Recall&lt;&#x2F;h4&gt;
+&lt;p&gt;It tells you how weak is your model in covering True Classes. If number of False Negatives are more than True Positives then your model has less recall.&lt;&#x2F;p&gt;
+&lt;p&gt;For more info on Precision and Recall, &lt;a href=&quot;https:&#x2F;&#x2F;towardsdatascience.com&#x2F;multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&quot;&gt;Click Here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;F1-Score can be easily calculated for a binary classification Problem.&lt;&#x2F;li&gt;
+&lt;li&gt;What if we have multi-class classification ? How can we calculate F1-Score and if calculated for each label how can we merge &#x2F; consolidate them ?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Let&#x27;s try to address these questions by considering an Example:&lt;&#x2F;p&gt;
+&lt;p&gt;We have a dataset of 3 Labels Cat, Dog and Fish. We have built a multi-class classifier that predicts one label among these 3 labels and let&#x27;s consider below as the the outputs for each Label. (One vs All)&lt;&#x2F;p&gt;
+&lt;p&gt;The above values can be represented as below confusion Matrix:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;i.ibb.co&#x2F;swZrksj&#x2F;Screenshot-from-2020-06-17-14-13-01.png&quot; alt=&quot;Confusion Matrix&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;From the above table we can deduce the following for each Label:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Animals&lt;&#x2F;th&gt;&lt;th&gt;TP&lt;&#x2F;th&gt;&lt;th&gt;FP&lt;&#x2F;th&gt;&lt;th&gt;FN&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Cat&lt;&#x2F;td&gt;&lt;td&gt;10&lt;&#x2F;td&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Dog&lt;&#x2F;td&gt;&lt;td&gt;20&lt;&#x2F;td&gt;&lt;td&gt;11&lt;&#x2F;td&gt;&lt;td&gt;12&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Fish&lt;&#x2F;td&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;td&gt;12&lt;&#x2F;td&gt;&lt;td&gt;13&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Now F-1 Score for each label can be calculated by calculating individual Precisions and Recalls by&lt;&#x2F;p&gt;
+&lt;p&gt;Precision = T.P &#x2F; (T.P + F.P)
+Recall = T.P &#x2F; (T.P + F.N)&lt;&#x2F;p&gt;
+&lt;p&gt;Ex: For Cat we have the following:
+Precision = 10 &#x2F; (10+15) = 0.4
+Recall = 10 &#x2F; (10+13) = 0.43&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore F1-Score for &lt;strong&gt;Cat is 0.414&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Similarly F1-Scores for other labels are &lt;strong&gt;Dog: 0.635, Fish: 0.51&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We acheived F1 Scores for independent Labels. How can we aggregate these F1-Scores into a single F1-Score for evaluating the Model ?&lt;&#x2F;p&gt;
+&lt;p&gt;We have two type of Aggregations:
+&lt;strong&gt;Macro Averaged F1-Score and Micro-Averaged F1-Score&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;macro-averaged-f1-score&quot;&gt;Macro Averaged F1-Score&lt;&#x2F;h4&gt;
+&lt;p&gt;Here we simple average all the F1-Scores and calculate a mean F1-Score.&lt;&#x2F;p&gt;
+&lt;p&gt;Average of all the F1-Scores result in &lt;strong&gt;0.52&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;But simply averaging all the F1-Scores isn&#x27;t a fair way to estimate a model perfomance. Because this metric doesn&#x27;t perform good on imbalanced dataset. A good explaination on the same can be &lt;a href=&quot;https:&#x2F;&#x2F;datascience.stackexchange.com&#x2F;questions&#x2F;15989&#x2F;micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin&quot;&gt;found here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;micro-averaged-f1-score&quot;&gt;Micro Averaged F1-Score&lt;&#x2F;h4&gt;
+&lt;p&gt;Here instead of calculating each label&#x27;s F1-Score, we derive the F1-Score by calculating Precision and Recall by summing all the TPs and Type Errors instead of calculating for each Label:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b2c2f;color:#cccece;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;Total T&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;Ps &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;20&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;13 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;43
+&lt;&#x2F;span&gt;&lt;span&gt;Total F&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;Ps &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;15&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;11&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;12 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;38
+&lt;&#x2F;span&gt;&lt;span&gt;Total F&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;Ns &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;13&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;13 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;39
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Precision &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;43&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;&#x2F;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;43&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;38&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;) = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;53
+&lt;&#x2F;span&gt;&lt;span&gt;Recall &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;524
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;F1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;Score &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5fb3b3;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#f99157;&quot;&gt;526
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Micro Averaged f1 score is one of the metric to be used for validation of multi-class classifier.&lt;&#x2F;p&gt;
+&lt;p&gt;Scikitlearn offers computation of micro average f1 score on the fly through the function &lt;a href=&quot;https:&#x2F;&#x2F;scikit-learn.org&#x2F;stable&#x2F;modules&#x2F;generated&#x2F;sklearn.metrics.f1_score.html&quot;&gt;&lt;code&gt;sklearn.metrics.f1_score&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Gap Up Gap Down Trading</title>
+        <published>2021-09-04T00:00:00+00:00</published>
+        <updated>2021-09-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://blog.akhildevelops.co.in/blog/1-gap-up-gap-down/" type="text/html"/>
+        <id>https://blog.akhildevelops.co.in/blog/1-gap-up-gap-down/</id>
+        
+        <content type="html">&lt;div class=&quot;cover-image&quot;&gt;
+  &lt;img src=&quot;cover.png&quot;&#x2F;&gt;
+  &lt;p class=&quot;desc&quot;&gt;
+    Gap Up and Gap Down
+  &lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We will try to analyse what should be our directional view for intra-day trades when market gaps up&#x2F;down.&lt;&#x2F;p&gt;
+&lt;p&gt;Generally, when the market gap&#x27;s up we expect to see there&#x27;s a bullish view on stock and similarly for gap down a bearish view.&lt;&#x2F;p&gt;
+&lt;p&gt;Keeping that in mind let&#x27;s pick PNB stock for this analysis and lets try to see how the share price performed in a day during gap up&#x2F;gap down days.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;1-gap-up-gap-down&#x2F;thumbnail.jpg&quot; alt=&quot;gap-range&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This graph tells movement of shares price in a given day when there&#x27;s a gap up&#x2F;down of more than 4%.&lt;&#x2F;p&gt;
+&lt;p&gt;We can observe that most of the days are concentrated in two areas covered in rectangles.&lt;&#x2F;p&gt;
+&lt;p&gt;Surprisingly, we can see there&#x27;s inverse relation. If there&#x27;s a gap up we can see day ended in loss that appears in the Green rectangle. Similarly if there&#x27;s a gap down we can observe day ended high as observed in Red rectangle.&lt;&#x2F;p&gt;
+&lt;p&gt;To make more sense consider the day when there was the highest gap-up i.e on 2002-07-15 @18% if we observe the day went down by -12.92% 😲. If a trader with bullish view takes a long call then he would have definitely hit loss 😭.&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore it is suggested to, preferably take reverse calls whenever there&#x27;s a gap up&#x2F;down i.e, taking short and long calls respectively. ❗(Not an advisory)&lt;&#x2F;p&gt;
+&lt;p&gt;We can also see out of all the gap opening days, how many short&#x2F;long opportunities can be grabbed.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;blog.akhildevelops.co.in&#x2F;blog&#x2F;1-gap-up-gap-down&#x2F;stats.jpg&quot; alt=&quot;stats&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For doubts, questions or want to know Elon Musk&#x27;s next tweet on bitcoin, reachme out on twitter: @143akhi&lt;&#x2F;p&gt;
+&lt;p&gt;Click below on streamlit for an interactive tour of the above strategy.&lt;&#x2F;p&gt;
+&lt;p style=&#x27;align: left;&#x27;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;share.streamlit.io&#x2F;enforcer007&#x2F;streamlit&#x2F;main&#x2F;app.py&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;static.streamlit.io&#x2F;badges&#x2F;streamlit_badge_black_white.svg&quot; alt=&quot;Streamlit App&quot;&gt;&lt;&#x2F;img&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
